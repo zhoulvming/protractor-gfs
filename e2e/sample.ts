@@ -1,4 +1,4 @@
-import { browser } from 'protractor';
+import { browser, $} from 'protractor';
 
 import { HomePage } from './pages/home.po';
 import { SampleListPage } from './pages/sample-list.po';
@@ -14,10 +14,18 @@ describe('protractor-gfs App', () => {
 
   it('should display home page', () => {
     browser.driver.manage().window().maximize();
-    homePage.navigateTo();
+    homePage.navigateTo().then(function(){
+      $('a#listLink').click().then(function(){
+        browser.getCurrentUrl().then(function(val){
+          console.log(val);
+          $('input#name').sendKeys('111222').then(function(){
+            $('input#name').getText().then(function(val1){
+              console.log(val1);
+            });
+          });
+        });
+      });
+    });
   });
 
-  it('should display sample list page', () => {
-    sampleListPage.navigateTo();
-  });
 });
