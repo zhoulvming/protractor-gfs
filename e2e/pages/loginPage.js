@@ -1,5 +1,4 @@
 // page is non-angular
-// browser.ignoreSynchronization = true;
 import BasePage from './basePage';
 
 class LoginPage extends BasePage {

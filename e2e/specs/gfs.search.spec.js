@@ -19,5 +19,8 @@ describe('gfs test', () => {
     homePage.switchToWindow(1, gfsPage);
     expect(gfsPage.loaded()).toBe(true);
 
+    // get row&cell data from table
+
+
   });
 });

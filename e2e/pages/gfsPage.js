@@ -2,15 +2,18 @@
 import BasePage from './basePage';
 
 class GfsPage extends BasePage {
-    constructor() {
-        super();
-        this.gfslink = element(by.name('gfslink'));
+  constructor() {
+    super();
+    this.gfslink = element(by.name('gfslink'));
 
-        this.url = 'http://localhost:4200/business/sample/list';
-        this.pageLoaded = this.titleIs('ProtractorGfs');
-    }
+    this.url = 'http://localhost:4200/business/sample/list';
+    this.pageLoaded = this.titleIs('ProtractorGfs');
+  }
 
 
+  getData(iRow, iCol) {
+
+  }
 
 }
 export default new GfsPage();
